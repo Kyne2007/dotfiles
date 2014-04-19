@@ -1,24 +1,17 @@
 [user]
-    name = Kyne
-    email = 4019532@qq.com
-[merge]
-    tool = vimdiff
-    # Include summaries of merged commits in newly created merge commit messages
-    log = true
-[giggle]
-    main-window-maximized = false
-    main-window-geometry = 296x71+1+58
-    history-view-vpane-position = 549
-    main-window-view = FileView
-    file-view-vpane-position = 538
-[color]
-    ui = auto
-    diff = auto
-    status = auto
-    branch = auto
-[diff]
-    tool = vimdiff
+	name = Kyne2007
+	email = 4019532@qq.com
 [core]
-    editor = /usr/bin/vim
-[alias]
-    lgg = log --graph --pretty=format:\"%C(yellow)%h%Creset%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\"
+	excludesfile = /Users/Kyne/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+	default = matching
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f

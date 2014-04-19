@@ -31,3 +31,4 @@ zsh:
 
 git:
 	ln $(LNSOPT) $(CURDIR)/git/gitconfig ~/.gitconfig
+	ln $(LNSOPT) $(CURDIR)/git/gitignore_global ~/.gitignore_global

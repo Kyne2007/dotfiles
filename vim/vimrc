@@ -34,6 +34,9 @@ Bundle "scrooloose/nerdtree"
 Bundle "kien/ctrlp.vim" 
 "在.c和.h文件中跳转
 Bundle 'a.vim'
+"更加美观的显示缩进对齐线
+Bundle "Yggdroot/indentLine"
+
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 
@@ -143,15 +146,15 @@ set matchtime=1     "匹配括号高亮的时间（单位是十分之一秒）
 set completeopt=longest,menu
 set cpt=.,w,b
 
-let mapleader=','
+" let mapleader=','
 
 
 "------------------------------------------------------------------------------
 "  < 插件配置 >
 "------------------------------------------------------------------------------
-set background=dark
+set background=light
 " 设置背景透明度
-set transparency=4
+set transparency=7
 " 主题
 colorscheme solarized
 hi Normal ctermbg=NONE
@@ -220,6 +223,8 @@ let g:pymode_rope = 0
 let g:pymode_lint_write = 0
 
 
+"indentLine
+map <leader>il :IndentLinesToggle<CR>
 "===============================
 "Session Support
 "===============================
