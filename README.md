@@ -28,7 +28,7 @@ vim
     $ ./configure
     $ sudo make install
     ```
-    
+
     * or you can use brew
 
     ```
@@ -39,11 +39,10 @@ vim
 
     * Getting GLOBAL from <http://www.gnu.org/software/global/download.html> and install it
     * or you can use brew
-    
+
     ```
     $ brew install global
     ```
-
 
 4. then:
 
@@ -63,12 +62,10 @@ git
 
      $ make git
 
-
 tmux
 ----
 
      $ make tmux
-
 
 zsh
 ----
@@ -79,6 +76,4 @@ reference
 ----
 
 *最初阅读并参考了hit9的文章和dotfiles，特此表示感谢*
-
-
 
