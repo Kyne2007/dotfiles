@@ -59,6 +59,7 @@ Bundle "klen/python-mode"
 Bundle "hynek/vim-python-pep8-indent"
 
 " 针对不同的文件类型加载对应的插件
+filetype plugin on
 " 针对不同的文件类型采用不同的缩进格式
 filetype plugin indent on
 
