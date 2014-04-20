@@ -1,4 +1,3 @@
-
 "------------------------------------------------------------------------------
 "  < Bundle >
 "------------------------------------------------------------------------------
@@ -40,12 +39,10 @@ Bundle "Yggdroot/indentLine"
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 
-" Bundle 'pep8'
-
 Bundle "taglist.vim"
 "一个注释插件
 Bundle 'tpope/vim-commentary' 
-"持久化的撤销操作插件, http://sjl.bitbucket.org/gundo.vim/ :GundoToggle
+"持久化的撤销操作插件
 Bundle 'sjl/gundo.vim' 
 "快速移动
 Bundle "Lokaltog/vim-easymotion" 
