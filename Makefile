@@ -1,4 +1,3 @@
-# vim:set noet: 
 .PHONY : vim tmux iterm2 zsh git
 
 LNSOPT=-s
