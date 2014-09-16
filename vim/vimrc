@@ -53,13 +53,6 @@ Bundle "tpope/vim-fugitive"
 "buffer快速浏览和切换
 Bundle "minibufexpl.vim"
 
-"Python.vim
-Bundle "python.vim--Vasiliev"
-"Python mode
-Bundle "klen/python-mode"
-"pep8 indent.
-Bundle "hynek/vim-python-pep8-indent"
-
 " 针对不同的文件类型加载对应的插件
 filetype plugin on
 " 针对不同的文件类型采用不同的缩进格式
