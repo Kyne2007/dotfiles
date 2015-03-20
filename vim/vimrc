@@ -53,6 +53,10 @@ Bundle "tpope/vim-fugitive"
 "buffer快速浏览和切换
 Bundle "minibufexpl.vim"
 
+"ultisnips 代码片段补全
+Bundle 'SirVer/ultisnips'
+Bundle "honza/vim-snippets"
+
 " 针对不同的文件类型加载对应的插件
 filetype plugin on
 " 针对不同的文件类型采用不同的缩进格式
@@ -69,7 +73,6 @@ set t_Co=256				"开启256 color
 set hidden					"允许有未保存的内容时切换缓冲区
 set ttyfast
 syntax on
-set showcmd				"输入的命令显示出来
 set showmode			"显示当前模式
 set noeb				"关闭报警声音
 set mouse=a				"开启鼠标定位
@@ -87,6 +90,7 @@ set hlsearch			"搜索
 set incsearch
 set ruler
 set nowrap				"不自动换行
+set showcmd				"输入的命令显示出来
 
 set guioptions-=T           " gvim隐藏工具栏
 set guioptions-=m           " gvim隐藏菜单栏
@@ -106,12 +110,12 @@ set cindent					"类似C语言风格的缩进
 set smartindent
 autocmd FileType python set textwidth=79 "PEP-8 Friendly
 
-" set expandtab   "把输入的tab自动转换成空格
+set expandtab   "把输入的tab自动转换成空格
 set tabstop=4		"一个tab键占据4个空格
 set softtabstop=4
 set shiftwidth=4    "每一级自动缩进的空格数
 
-" set list			"显示tab键
+set list			"显示tab键
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮    "list键的填充字符
 
 "根据文件类型设定缩进,覆盖掉默认的~,来自humiaozuzu
@@ -146,7 +150,10 @@ set cpt=.,w,b
 "------------------------------------------------------------------------------
 set background=dark
 " 设置背景透明度
-set transparency=7
+if has("gui_running")
+	" set background=light
+	set transparency=7
+endif
 " 主题
 colorscheme solarized
 hi Normal ctermbg=NONE
@@ -155,7 +162,7 @@ hi Normal ctermbg=NONE
 "NERDTree
 "最后只剩下nerdtree的时候关闭之
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let NERDTreeWinSize=23 "nerdtree 的宽度
+let NERDTreeWinSize=27 "nerdtree 的宽度
 let NERDTreeShowLineNumbers=1 "显示行号
 
 
@@ -165,7 +172,7 @@ let g:Powerline_symbols='fancy'
 
 
 "pep8, ctrl-k作为检查快捷键
-let g:pep8_map='<C-k>'
+" let g:pep8_map='<C-k>'
 
 
 "gundo 宽度
@@ -191,8 +198,12 @@ let g:vim_markdown_folding_disabled=1
 
 
 "YouCompleteMe
+let g:ycm_key_list_select_completion = ['<c-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-k>', '<Up>']
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:syntastic_always_populate_loc_list = 1
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 "syntastic
 let g:syntastic_error_symbol = '✗'	"set error or warning signs
@@ -211,13 +222,11 @@ let g:miniBufExplMapWindowNavVim = 1
 "用<C-k,j,h,l>切换到上下左右的窗口中去
 let g:miniBufExplMapCTabSwitchBufs = 1
 
-"for pythonist, use vim-pep8-indent instead of pymode
-let g:pymode_indent = 0
-" Dont Load rope plugin
-let g:pymode_rope = 0
-" Disable pylint checking every save
-let g:pymode_lint_write = 0
-
+"ultisnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+" let g:UltiSnipsListSnippets = <c-tab>
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 "indentLine
 map <leader>il :IndentLinesToggle<CR>
@@ -247,6 +256,7 @@ if (!empty(db))
      exe "cs add " . db . " " . path
      nmap <C-c>s :cs find s <C-R>=expand("<cword>")<CR><CR>
      nmap <C-c>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+     nmap <C-c>s :cs find d <C-R>=expand("<cword>")<CR><CR>
      nmap <C-c>c :cs find c <C-R>=expand("<cword>")<CR><CR>
      nmap <C-c>t :cs find t <C-R>=expand("<cword>")<CR><CR>
      nmap <C-c>e :cs find e <C-R>=expand("<cword>")<CR><CR>

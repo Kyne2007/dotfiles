@@ -15,7 +15,7 @@ vim:
 	ln $(LNSOPT) $(CURDIR)/vim/vimrc ~/.vimrc
 	ln $(LNSOPT) $(CURDIR)/vim/vundle ~/.vim/bundle/vundle
 	vim -c "BundleInstall"
-	cd ~/.vim/bundle/YouCompleteMe ;  ./install.sh --clang-completer
+	#cd ~/.vim/bundle/YouCompleteMe ;  ./install.sh --clang-completer
 
 
 tmux:

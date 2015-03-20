@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="af-magic"
-#ZSH_THEME="random"
+# ZSH_THEME="random"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -47,6 +47,8 @@ export TERM=screen-256color
 
 # alias for reload zshrc
 alias reload!='. ~/.zshrc'
+alias vi='/usr/local/bin/vim'
+alias vim='/usr/local/bin/vim'
 # alias for quick server
 #alias pyserver='python -m SimpleHTTPServer'
 
