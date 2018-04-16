@@ -1,8 +1,8 @@
-#dotfiles
+# dotfiles
 
 for Mac.
 
-##注意事项
+## 注意事项
 
 首先，更新所有submodule:
 
@@ -12,7 +12,7 @@ for Mac.
 
     $ make vim force=1
 
-##vim
+## vim
 
 1. 系统依赖: ctags, GNU GLOBAL
 
@@ -49,25 +49,25 @@ for Mac.
     $ make vi
     ```
 
-##iterm2
+## iterm2
 
      $ make iterm2
 
 然后安装iterm2/badwolf.itermcolors
 
-#git
+# git
 
      $ make git
 
-##tmux
+## tmux
 
      $ make tmux
 
-##zsh
+## zsh
 
      $ make zsh
 
-##reference
+## reference
 
 *最初阅读并参考了hit9的文章和dotfiles，特此表示感谢*
 
